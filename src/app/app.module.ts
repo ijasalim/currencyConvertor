@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { CurrencyConvertorModule } from './currency-convertor/currency-convertor.module';
+import { CurrencyConvertorModule } from './common/currency-convertor.module';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     FormsModule,
-    CurrencyConvertorModule
+    CurrencyConvertorModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

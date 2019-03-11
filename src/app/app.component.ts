@@ -1,29 +1,22 @@
 import { Component } from '@angular/core';
-import { CurrencyService } from './currency-convertor/services/currency.service';
-
+import { CurrencyService } from './common/services/currency.service';
+import { Currency } from './common/model/currency.interface';
 @Component({
-  selector: 'app-root',
+  selector: 'pm-root',
   templateUrl: './app.component.html',
+  styleUrls:['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  
   result;
-  constructor(private currencyService:CurrencyService){}
+  
+  constructor(){}
 
-  convertCurrency($event){
-
-    this.getRate($event);
-    
-    setInterval(()=>{
-      this.getRate($event);
-    },10000);
-        
+  getResult($event){
+      this.result=$event.USD;        
   }
 
-  getRate($event){
-    this.currencyService.convertCurrency($event['amount'],$event['currency']).subscribe(response=>{ 
-      this.result =  response;
-    });
-  }
+ 
+
 
 }
